@@ -34,12 +34,14 @@
     <!-- ToDo list section  -->
     <section class="todo-section">
       <ul class="todo-list">
-        <li v-for="element in toDo">
+        <li v-for="(element, index) in toDo">
           <span
           class="list-text"
           :class="{done: element.done}"
           >{{ element.text }}</span>
-          <span class="delete-cross"></span>
+          <span class="delete-cross"
+          @click="removeToDo(index)"
+          ></span>
         </li>
       </ul>
     </section>
