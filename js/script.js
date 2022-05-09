@@ -18,12 +18,29 @@ const app = new Vue({
         text: "Fare la spesa",
         done: false
       }
-    ]
+    ],
+    newToDo: '',
   },
   methods:{
     removeToDo: function(index){
       // console.log(index);
       this.toDo.splice(index, 1);
+    },
+
+    addToDo: function(){
+      //rimuovere gli spazi all'inizio della stringa
+      const formattedString = this.newToDo.trim();
+      //creare un nuovo oggetto
+      const newObj = {
+        text: formattedString,
+        done: false
+      };
+
+      //inserire l'oggetto se la stringa non è vuota
+      if(formattedString)this.toDo.push(newObj);
+
+      //ripulire l'input
+      this.newToDo = '';
     },
   }
 });
