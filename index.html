@@ -27,7 +27,7 @@
     <!-- input section  -->
 
     <section class="input-section">
-      <input type="text" placeholder="Aggiungi ToDo" v-model="newToDo">
+      <input type="text" placeholder="Aggiungi ToDo" v-model="newToDo" @keyup.enter="addToDo">
       <button @click="addToDo">Crea</button>
     </section>
 
