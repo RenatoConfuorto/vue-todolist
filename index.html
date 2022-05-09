@@ -38,6 +38,7 @@
           <span
           class="list-text"
           :class="{done: element.done}"
+          @click="changeStatus(index)"
           >{{ element.text }}</span>
           <span class="delete-cross"
           @click="removeToDo(index)"

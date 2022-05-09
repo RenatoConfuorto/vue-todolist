@@ -42,5 +42,9 @@ const app = new Vue({
       //ripulire l'input
       this.newToDo = '';
     },
+
+    changeStatus: function(index){
+      this.toDo[index].done = !this.toDo[index].done;
+    },
   }
 });
