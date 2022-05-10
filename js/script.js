@@ -4,22 +4,27 @@ const app = new Vue({
     toDo:[
       {
         text: "Fare l'esercizio",
-        done: false
+        done: false,
+        visible: true,
       },
       {
         text: "Dare da mangiare ai gatti",
-        done: true
+        done: true,
+        visible: true,
       },
       {
         text: "Riguardare la lezione",
-        done: false
+        done: false,
+        visible: true,
       },
       {
         text: "Fare la spesa",
-        done: false
+        done: false,
+        visible: true,
       }
     ],
     newToDo: '',
+    search: '',
   },
   methods:{
     removeToDo: function(index){
@@ -45,6 +50,18 @@ const app = new Vue({
 
     changeStatus: function(index){
       this.toDo[index].done = !this.toDo[index].done;
+    },
+
+    filter: function(){
+
+      this.toDo.forEach(element => {
+        if(element.text.toLowerCase().includes(this.search.trim().toLowerCase())){
+          element.visible = true;
+        }else{
+          element.visible = false;
+        }
+      });
+      
     },
   }
 });

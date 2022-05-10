@@ -27,14 +27,22 @@
     <!-- input section  -->
 
     <section class="input-section">
-      <input type="text" placeholder="Aggiungi ToDo" v-model="newToDo" @keyup.enter="addToDo">
-      <button @click="addToDo">Crea</button>
+
+      <div>
+        <input type="text" placeholder="Aggiungi ToDo" v-model="newToDo" @keyup.enter="addToDo">
+        <button @click="addToDo">Crea</button>
+      </div>
+
+      <div>
+        <label for="search-form">Filtra gli elementi</label>
+        <input type="text" id="serach-form" placeholder="Cerca" v-model="search" @keyup="filter">
+      </div>
     </section>
 
     <!-- ToDo list section  -->
     <section class="todo-section">
       <ul class="todo-list">
-        <li v-for="(element, index) in toDo">
+        <li v-for="(element, index) in toDo" v-if="element.visible">
           <span
           class="list-text"
           :class="{done: element.done}"

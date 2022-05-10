@@ -23,7 +23,8 @@
 }
 
 .input-section input,
-.input-section button{
+.input-section button,
+.input-section label{
   font-size: 1.4rem;
   margin: 1rem;
   padding: 0.3rem 0.8rem;
